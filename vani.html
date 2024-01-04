@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Increment and Decrement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: linear-gradient(rgba(103,58,183,0.8),rgba(33,150,243,0.5));
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    h1 {
+      color: #000000;
+      font-size: 60px;
+      
+    }
+
+    #counter-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    #counter {
+      font-size: 60px;
+      color: #f2f212e1;
+      margin: 4px;
+    }
+
+    #tree-container {
+    position: relative;
+    padding: 4rem;
+    height: 350px;
+    min-width: 300px;
+    background-color: rgb(249, 239, 242);
+    border-radius: 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    float: right;
+    position: absolute;
+    top: 100px;
+    right: 10rem;
+
+    }
+
+    #tree-image {
+      max-width: 100%;
+      height: auto;
+      width:300px;
+      mix-blend-mode: multiply;     
+    }
+
+    button {
+      background-color: #181c17;
+      color: #ffffff;
+      border: none;
+      padding: 50px ;
+      font-size: 30px;
+      cursor: pointer;
+      margin: 40px;
+
+    }
+
+    button:hover {
+      background-color: #3c536b;
+    }
+  </style>
+  <script>
+    var counterValue=0;
+   function updateCounter(value) {
+  counterValue += value;
+  
+  // Set the limits for the counter value
+  if (counterValue < -5) counterValue = -5;
+  if (counterValue > 10) counterValue = 10;  // Adjust the upper limit as needed
+
+  if (counterValue <=-5) {
+        alert("You have reached the limit!");
+   
+      } 
+  if (counterValue >=10) {
+        alert("You have reached the limit!");
+       
+      } 
+  document.getElementById("counter").innerHTML = counterValue;
+
+  var imageSize = 100 + counterValue * 20; // Adjust the scaling factor as needed
+  document.getElementById("tree-image").style.width = imageSize + "px";
+}
+
+function increment() {
+  updateCounter(1);
+}
+
+function decrement() {
+  updateCounter(-1);
+}
+
+  </script>
+</head>
+<body style="background-color: burlywood;">
+  <h1 >Increment and Decrement</h1>
+  <div id="counter-container">
+    <button onclick="decrement()">Decrement</button>
+    <p id="counter">0</p>
+    <button onclick="increment()">Increment</button>
+    <div id="tree-container">
+      <img id="tree-image" src="C:\Users\nsvpj\Downloads\incremnt.jpg" alt="tree-image">
+      </div>
+  </div>
+
+</body>
+</html>
